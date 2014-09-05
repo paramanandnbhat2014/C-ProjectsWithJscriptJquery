@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>../../img/shopping1.jpg</ImageUrl>
+    <NavigateUrl>http://www.thatsmelbourne.com.au/Shopping/RetailCentres/Pages/RetailCentres.aspx</NavigateUrl>
+    <AlternateText>Arts venues</AlternateText>
+    <Keyword>Site1</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>../../img/shopping2.jpg</ImageUrl>
+    <NavigateUrl>http://www.thatsmelbourne.com.au/Shopping/BooksMusicandStationery/Pages/BooksMusicandStationery.aspx</NavigateUrl>
+    <AlternateText>Aboriginal</AlternateText>
+    <Keyword>Site2</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>../../img/shopping3.jpg</ImageUrl>
+    <NavigateUrl>http://www.thatsmelbourne.com.au/Shopping/Gifts/Pages/Gifts.aspx</NavigateUrl>
+    <AlternateText>Arts venues</AlternateText>
+    <Keyword>Site3</Keyword>
+  </Ad>
+</Advertisements>

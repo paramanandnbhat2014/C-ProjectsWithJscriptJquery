@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>../../img/seeDo3.jpg</ImageUrl>
+    <NavigateUrl>http://www.thatsmelbourne.com.au/Placestogo/Pages/placestogo.aspx</NavigateUrl>
+    <AlternateText>SEEDO3</AlternateText>
+    <Keyword>Site1</Keyword>
+    </Ad>
+  <Ad>
+    <ImageUrl>../../img/seeDo2.jpg</ImageUrl>
+    <NavigateUrl>http://www.thatsmelbourne.com.au/Placestogo/ParksandGardens/AllParksandGardens/Pages/4431.aspx</NavigateUrl>
+    <AlternateText>SEEDO2</AlternateText>
+    <Keyword>Site2</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>../../img/seedO1.jpg</ImageUrl>
+    <NavigateUrl>http://www.thatsmelbourne.com.au/Placestogo/ParksandGardens/Pages/ParksandGardens.aspx</NavigateUrl>
+    <AlternateText>SEEDO1</AlternateText>
+    <Keyword>Site3</Keyword>
+  </Ad>
+</Advertisements>
