@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Meltion Hotel"  description="Meltion Hotel">
+    <siteMapNode url="./Ass2/index.aspx" title="Home"  description="Home" tooltip="Home"/>
+    <siteMapNode url="./Ass2/locked/Registration.aspx" title="Registration"  description="Registration" tooltip="Registration" />
+    <siteMapNode url="./Ass2/locked/AboutUs.aspx" title="About Us"  description="About Us" tooltip="About Us">
+      <siteMapNode url="./Ass2/locked/History.aspx" title="Our History" description="Our History" tooltip="Our History"/>
+      <siteMapNode url="./Ass2/locked/FAQ.aspx" title="Frequently asked questions" description="FAQ" tooltip="Frequently asked questions"/>
+    </siteMapNode>
+    <siteMapNode url="./Ass2/locked/SiteMap.aspx" title="Site Map"  description="Site Map" tooltip="Site Map"/>
+    <siteMapNode url="./Ass2/locked/Documentation.aspx" title="Documentation"  description="Documentation" tooltip="Documentation" />
+    <siteMapNode url="./Ass2/locked/Email.aspx" title="Email"  description="Email" tooltip="Email" />
+    <siteMapNode url="./Ass2/locked/Calendar.aspx" title="Calendar"  description="Calendar" tooltip="Calendar" />
+  </siteMapNode>
+</siteMap>
