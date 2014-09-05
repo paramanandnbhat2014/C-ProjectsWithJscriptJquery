@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MeltionHotel.MasterPage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="App_Themes/skin/css/siteMap.css" rel="stylesheet" />
+    <link href="App_Themes/skin//css/masterPage.css" rel="stylesheet" />
+    <link href="App_Themes/skin//css/aboutUs.css" rel="stylesheet" />
+    <link href="App_Themes/skin//css/registration.css" rel="stylesheet" />
+    <link href="App_Themes/skin//css/faq.css" rel="stylesheet" />
+    <link href="App_Themes/skin/css/homePage.css" rel="stylesheet" />
+    <link href="App_Themes/skin/css/displayCode.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="content">
+        <div class="header">
+            <div class="logo">
+                <img src="~/img/logo.png" alt="logo" runat="server" />
+            </div>
+            <div class="login">
+                <!-- Login and join from here -->
+                <div class="form-horizontal">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:Panel ID="Panel1" class="panel10" runat="server">
+                                <asp:Label ID="welcome" runat="server" Visible="false"></asp:Label>
+                                <asp:Button ID="logoutButton" runat="server" Text="Logout" SkinID="Button-blue" Visible="false"
+                                    OnClick="logoutButton_Click" />
+                            </asp:Panel>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="div-body">
+            <div class="div-row">
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+                <div class="navs">
+                    <!--
+                           DataSourceID="SiteMapDataSource1"
+                       -->
+                    <asp:Menu ID="menu1" SkinID="Menu3" runat="server">
+                    </asp:Menu>
+                </div>
+            </div>
+            <div class="div-body">
+                <div class="sidebar">
+                    <div class="welcome">
+                        <blockquote class="blockquote">
+                            <h4>
+                                Welcome to Meltion Hotel</h4>
+                            <h5>
+                                --- enjoy your holiday</h5>
+                        </blockquote>
+                    </div>
+                    <br />
+                    <div>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                            <ContentTemplate>
+                                <asp:Menu ID="Menu2" SkinID="Menu2" DataSourceID="SiteMapDataSource1" runat="server">
+                                </asp:Menu>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                    <br />
+                    <div>
+                        <img id="smallImage" src="./img/dog.jpg" alt="side bar pic" runat="server" />
+                    </div>
+                    <br />
+                    <div>
+                        <asp:AccessDataSource runat="server" DataFile="~/App_Data/user.accdb" ID="dsEvent">
+                        </asp:AccessDataSource>
+                        <asp:AccessDataSource runat="server" DataFile="~/App_Data/user.accdb" ID="selectChangedDB">
+                        </asp:AccessDataSource>
+                        <div class="calendarleft">
+                            <asp:Calendar ID="Calendar2" class="calendar-bg" runat="server" SkinID="calendar"
+                                OnDayRender="dayRender" FirstDayOfWeek="Sunday" CellPadding="2" CellSpacing="1"
+                                DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="7pt" ForeColor="Black"
+                                Height="180px" Width="230px" >
+                                <TitleStyle BackColor="#FFFFFF" ForeColor="#339966" Font-Bold="True" Font-Size="9pt" />
+                                <DayHeaderStyle BackColor="#339966" ForeColor="#FFFFFF" Font-Bold="True" Font-Size="8pt" />
+                                <NextPrevStyle VerticalAlign="Bottom" />
+                                <OtherMonthDayStyle ForeColor="#CCCCCC" BackColor="#E1EBEB" />
+                                <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                                <SelectorStyle BackColor="#CCCCCC" />
+                                <TodayDayStyle />
+                                <WeekendDayStyle CssClass="calendar-weekend" />
+                            </asp:Calendar>
+                        </div>
+                        <p />
+                        <asp:Label ID="todayDate" class="calendarleft" Visible="false" Text="Events For Today"
+                            runat="server" />
+                        <asp:ListView ID="ListView1" Visible="false" runat="server">
+                            <ItemTemplate>
+                                <div class="floatleft">
+                                    <p>
+                                        Event Description</p>
+                                    <asp:Label ID="Label1" Text='<%# Eval("EventDescription") %>' runat="server"></asp:Label>
+                                    <br />
+                                    <p>
+                                        Event Time</p>
+                                    <asp:Label ID="Label5" Text='<%# Eval("EventDate", @"{0:dd/M/yyyy}") %>' runat="server"></asp:Label>
+                                    <asp:Label ID="Label2" Text='<%# Eval("EventTime", @"{0:h\:mm tt}") %>' runat="server"></asp:Label>
+                                    <br />
+                                </div>
+                            </ItemTemplate>
+                        </asp:ListView>
+                        <asp:Label ID="eventDesc" class="calendarleft" runat="server"></asp:Label>
+                        <br class="newline" />
+                        <br />
+                        <asp:Label ID="selectedDateLabel" Visible="false" class="calendarleft" Text="Events For Selected Day"
+                            runat="server"></asp:Label>
+                        <asp:ListView ID="ListView2" Visible="false" runat="server">
+                            <ItemTemplate>
+                                <div class="floatleft">
+                                    <p>
+                                        Event Description</p>
+                                    <asp:Label ID="Label3" Text='<%# Eval("EventDescription") %>' runat="server"></asp:Label>
+                                    <br />
+                                    <p>
+                                        Event Time</p>
+                                    <asp:Label ID="Label6" Text='<%# Eval("EventDate", @"{0:dd/M/yyyy}") %>' runat="server"></asp:Label>
+                                    <asp:Label ID="Label4" Text='<%# Eval("EventTime", @"{0:h\:mm tt}") %>' runat="server"></asp:Label>
+                                    <br />
+                                </div>
+                            </ItemTemplate>
+                        </asp:ListView>
+                        <asp:Label ID="eventDesc2" class="calendarleft" runat="server"></asp:Label>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+                <div class="article">
+                    <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+                        <NodeStyle CssClass="removeLine" />
+                        <PathSeparatorTemplate>
+                            >
+                        </PathSeparatorTemplate>
+                    </asp:SiteMapPath>
+                    <br />
+                    <br />
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <br class="newline" />
+            <hr class="newline" />
+            <footer class="footer">
+                    <p>Copyright &copy; 2013 Meltion Hotel Ltd. All rights reserved.</p>
+                    <p>Designed by Pammy.</p>
+                </footer>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
